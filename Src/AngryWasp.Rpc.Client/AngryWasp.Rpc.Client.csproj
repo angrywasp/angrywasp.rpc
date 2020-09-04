@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="../../External/AngryWasp.Build/AngryWasp.Build.Library.targets"/>
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AngryWasp.Rpc.Client</PackageId>
+    <Title>$(PackageId)</Title>
+    <Version>1.0.0</Version>
+    <Authors>AngryWasp</Authors>
+    <PackageDescription>Extensible RPC client</PackageDescription>
+    <PackageLicenseFile>AngryWasp.LICENSE.txt</PackageLicenseFile>
+    <RepositoryUrl>https://bitbucket.org/angrywasp/angrywasp.rpc</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../External/AngryWasp.Build/LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AngryWasp.Helpers" Version="*"/>
+    <PackageReference Include="AngryWasp.Logger" Version="*"/>
+    <PackageReference Include="Newtonsoft.Json" Version="*"/>
+    <PackageReference Include="AngryWasp.Net" Version="*"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AngryWasp.Rpc.Common/AngryWasp.Rpc.Common.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="../../External/AngryWasp.Build/AngryWasp.Build.Application.targets"/>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../External/AngryWasp.Build/LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AngryWasp.Logger" Version="*"/>
+    <PackageReference Include="Newtonsoft.Json" Version="*"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AngryWasp.Rpc.Common/AngryWasp.Rpc.Common.csproj" />
+    <ProjectReference Include="../AngryWasp.Rpc.Client/AngryWasp.Rpc.Client.csproj" />
+    <ProjectReference Include="../AngryWasp.Rpc.Server/AngryWasp.Rpc.Server.csproj" />
+  </ItemGroup>
+</Project>

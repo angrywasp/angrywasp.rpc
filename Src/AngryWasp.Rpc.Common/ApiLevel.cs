@@ -1,0 +1,20 @@
+using AngryWasp.Helpers;
+using Newtonsoft.Json;
+
+namespace AngryWasp.Rpc.Common
+{
+    public class ApiLevel
+    {
+        [JsonIgnore]
+        public const byte MAJOR = 1;
+
+        [JsonIgnore]
+        public const byte MINOR = 0;
+
+        [JsonProperty("major")]
+        public ushort Major { get; set; } = MAJOR;
+
+        [JsonProperty("minor")]
+        public ushort Minor { get; set; } = MINOR;
+    }
+}

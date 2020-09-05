@@ -1,4 +1,4 @@
-namespace AngryWasp.Rpc.Common
+namespace AngryWasp.Json.Rpc
 {
     //200 = OK
     //400 = Handler error. Error message should be provided as the JSON response

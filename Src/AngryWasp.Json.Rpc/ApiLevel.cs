@@ -1,7 +1,7 @@
 using AngryWasp.Helpers;
 using Newtonsoft.Json;
 
-namespace AngryWasp.Rpc.Common
+namespace AngryWasp.Json.Rpc
 {
     public class ApiLevel
     {

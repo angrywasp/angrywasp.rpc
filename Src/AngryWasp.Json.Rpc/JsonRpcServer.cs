@@ -1,4 +1,3 @@
-using AngryWasp.Rpc.Common;
 using AngryWasp.Logger;
 using Newtonsoft.Json;
 using System.Text;
@@ -13,7 +12,7 @@ using AngryWasp.Helpers;
 using System.Reflection;
 using System.Linq;
 
-namespace AngryWasp.Rpc.Server
+namespace AngryWasp.Json.Rpc
 {
     public class JsonRpcServer
     {

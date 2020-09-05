@@ -1,7 +1,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace AngryWasp.Rpc.Common
+namespace AngryWasp.Json.Rpc
 {
     [JsonObject]
     public class JsonResponseBase

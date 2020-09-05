@@ -1,4 +1,3 @@
-using AngryWasp.Rpc.Common;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AngryWasp.Rpc.Client
+namespace AngryWasp.Json.Rpc
 {
     public class JsonRpcClient
     {
@@ -42,12 +41,10 @@ namespace AngryWasp.Rpc.Client
                 string str = await result.Content.ReadAsStringAsync();
                 return str;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Debugger.Break();//errorString = ex.Message;
+                return null;
             }
-
-            return null;
         }
     }
 }

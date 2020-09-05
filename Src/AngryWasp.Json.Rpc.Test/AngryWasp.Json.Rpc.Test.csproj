@@ -8,11 +8,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AngryWasp.Logger" Version="*"/>
+    <PackageReference Include="AngryWasp.Cli" Version="*"/>
     <PackageReference Include="Newtonsoft.Json" Version="*"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../AngryWasp.Rpc.Common/AngryWasp.Rpc.Common.csproj" />
-    <ProjectReference Include="../AngryWasp.Rpc.Client/AngryWasp.Rpc.Client.csproj" />
-    <ProjectReference Include="../AngryWasp.Rpc.Server/AngryWasp.Rpc.Server.csproj" />
+    <ProjectReference Include="../AngryWasp.Json.Rpc/AngryWasp.Json.Rpc.csproj" />
   </ItemGroup>
 </Project>

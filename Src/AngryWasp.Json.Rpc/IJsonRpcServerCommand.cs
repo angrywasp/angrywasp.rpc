@@ -1,4 +1,4 @@
-namespace AngryWasp.Rpc.Server
+namespace AngryWasp.Json.Rpc
 {
     public interface IJsonRpcServerCommand
     {

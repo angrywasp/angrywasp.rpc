@@ -1,6 +1,6 @@
 using System;
 
-namespace AngryWasp.Rpc.Server
+namespace AngryWasp.Json.Rpc
 {
     public class JsonRpcServerCommandAttribute : Attribute
     {

@@ -1,13 +1,11 @@
-using AngryWasp.Rpc.Client;
-using AngryWasp.Rpc.Common;
-using AngryWasp.Rpc.Server;
+using AngryWasp.Cli;
+using AngryWasp.Json.Rpc;
 using Newtonsoft.Json;
 using System;
-using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace AngryWasp.Rpc.Test
+namespace AngryWasp.Json.Rpc.Test
 {
     public static class Program
     {
@@ -46,24 +44,35 @@ namespace AngryWasp.Rpc.Test
             //request.ApiLevel.Major = 2;
             request.Data.Value = command;
 
-            Task.Run( async () =>
+            bool result = Task.Run( async () =>
             {
                 string requestString = request.Serialize();
                 Log.WriteConsole("Sending JSON");
                 Log.WriteConsole(requestString);
 
                 string str = await Program.Client.SendRequest("echo", requestString);
-                Log.WriteConsole("Received JSON");
-                Log.WriteConsole(str);
 
-                JsonResponse<EchoResponse> response;
-                if (!JsonResponse<EchoResponse>.Deserialize(str, out response))
-                    Log.WriteError("Error with JSON response");
+                if (str == null)
+                {
+                    Log.WriteError("There was an error processing the request");
+                    return false;
+                }
                 else
-                    Log.WriteConsole($"JSON responded with {response.Data.Value}");
-            });
+                {
+                    Log.WriteConsole("Received JSON");
+                    Log.WriteConsole(str);
 
-            return true;
+                    JsonResponse<EchoResponse> response;
+                    if (!JsonResponse<EchoResponse>.Deserialize(str, out response))
+                        Log.WriteError("Error with JSON response");
+                    else
+                        Log.WriteConsole($"JSON responded with {response.Data.Value}");
+
+                    return true;
+                }
+            }).Result;
+
+            return result;
         }
     }
 

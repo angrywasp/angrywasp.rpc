@@ -124,7 +124,8 @@ namespace AngryWasp.Json.Rpc
 
             response.StatusCode = ok ? (int)Response_Code.OK : (int)Response_Code.Error;
             ((JsonResponseBase)resultData).Status = ok ? "OK" : "ERROR";
-            response.OutputStream.Write(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(resultData)));
+            byte[] bytes = Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(resultData));
+            response.OutputStream.Write(bytes, 0, bytes.Length);
             context.Response.Close();
         }
     }
